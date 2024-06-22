@@ -1,6 +1,8 @@
 package org.example.customArrayList;
 
 import org.example.customInterface.StringList;
+import org.example.stringListExceptions.IllegalIndexException;
+import org.example.stringListExceptions.ItemIsNullException;
 import org.example.stringListExceptions.StringNotFoundException;
 
 public class StringArrayList implements StringList {
@@ -214,12 +216,13 @@ public class StringArrayList implements StringList {
 
     private void checkNullPointerExceptionException(Object item) {
         if (item == null) {
-            throw new NullPointerException("Переданный в метод параметр равен 'null'");
+            throw new ItemIsNullException("Переданный в метод параметр равен 'null'");
         }
     }
-    private void checkIndexOutOfBoundsException(int index){
-        if(index>=size){
-            throw new ArrayIndexOutOfBoundsException("Недопустимый индекс '" + index + "' для размера '" + size + "'");
+
+    private void checkIndexOutOfBoundsException(int index) {
+        if (index >= size) {
+            throw new IllegalIndexException("Недопустимый индекс '" + index + "' для размера '" + size + "'");
         }
     }
 }

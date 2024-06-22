@@ -201,7 +201,7 @@ class StringArrayListTest {
         //given
         //do
         //then
-        assertThrows(ArrayIndexOutOfBoundsException.class,() -> list.get(i));
+        assertThrows(ArrayIndexOutOfBoundsException.class, () -> list.get(i));
     }
 
     @Test
@@ -225,6 +225,7 @@ class StringArrayListTest {
         //then
         assertFalse(list.equals(list1));
     }
+
     @Test
     void testEqualsWithNullShouldThrowException() {
         //given
